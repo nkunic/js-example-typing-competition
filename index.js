@@ -63,7 +63,7 @@ function comp1StartTyping() {
     } else {
       clearInterval(loop);
     }
-  }, 250);
+  }, 750);
 }
 
 function comp2StartTyping() {
@@ -89,5 +89,5 @@ function comp3StartTyping() {
     } else {
       clearInterval(loop);
     }
-  }, 1000);
+  }, 250);
 }
