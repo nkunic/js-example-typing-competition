@@ -24,6 +24,8 @@ var texts = [
   'Sutra će biti divan dan',
 ];
 var rand;
+var minSpeed = 100;
+var maxSpeed = 500;
 var winner = 0;
 
 startBtn.addEventListener('click', timer);
@@ -57,7 +59,10 @@ function startTyping() {
 
 function comp1StartTyping() {
   var text = texts[rand];
-  console.log(text);
+  // var comp1Speed = Math.floor(Math.random());
+  var comp1Speed = Math.round(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
+  console.log('Computer 1 speed: ' + comp1Speed);
+  // console.log(text);
   var textArray = text.split('');
   var loop = setInterval(function () {
     if (textArray.length != 0) {
@@ -65,15 +70,18 @@ function comp1StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp1Btn.className = "btn btn-success w-100";
-      comp1Btn.innerHTML = "Position: " + winner;
+      comp1Btn.className = 'btn btn-success w-100';
+      comp1Btn.innerHTML = 'Position: ' + winner;
     }
-  }, 750);
+  }, comp1Speed);
 }
 
 function comp2StartTyping() {
   var text = texts[rand];
-  console.log(text);
+  // var comp2Speed = Math.floor(Math.random());
+  var comp2Speed = Math.round(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
+  console.log('Computer 2 speed: ' + comp2Speed);
+  // console.log(text);
   var textArray = text.split('');
   var loop = setInterval(function () {
     if (textArray.length != 0) {
@@ -81,15 +89,18 @@ function comp2StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp2Btn.className = "btn btn-success w-100";
-      comp2Btn.innerHTML = "Position: " + winner;
+      comp2Btn.className = 'btn btn-success w-100';
+      comp2Btn.innerHTML = 'Position: ' + winner;
     }
-  }, 500);
+  }, comp2Speed);
 }
 
 function comp3StartTyping() {
   var text = texts[rand];
-  console.log(text);
+  // var comp3Speed = Math.floor(Math.random());
+  var comp3Speed = Math.round(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
+  console.log('Computer 3 speed: ' + comp3Speed);
+  // console.log(text);
   var textArray = text.split('');
   var loop = setInterval(function () {
     if (textArray.length != 0) {
@@ -97,10 +108,10 @@ function comp3StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp3Btn.className = "btn btn-success w-100";
-      comp3Btn.innerHTML = "Position: " + winner;
+      comp3Btn.className = 'btn btn-success w-100';
+      comp3Btn.innerHTML = 'Position: ' + winner;
     }
-  }, 250);
+  }, comp3Speed);
 }
 
 function playerStartTyping() {
@@ -114,12 +125,12 @@ function playerStartTyping() {
       if (userText == texts[rand]) {
         // console.log('Tačno');
         winner++;
-        playerBtn.className = "btn btn-success w-100";
-        playerBtn.innerHTML = "Position: " + winner; 
+        playerBtn.className = 'btn btn-success w-100';
+        playerBtn.innerHTML = 'Position: ' + winner;
       } else {
         // console.log('Nije tačno');
-        playerBtn.className = "btn btn-danger";
-        playerBtn.innerHTML = "Wrong typing";
+        playerBtn.className = 'btn btn-danger';
+        playerBtn.innerHTML = 'Wrong typing';
       }
     }
   });
