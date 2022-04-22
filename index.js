@@ -65,8 +65,8 @@ function comp1StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp1Btn.className = "btn btn-sucess";
-      comp1Btn.innerHTML = "Position" + winner;
+      comp1Btn.className = "btn btn-success w-100";
+      comp1Btn.innerHTML = "Position: " + winner;
     }
   }, 750);
 }
@@ -81,8 +81,8 @@ function comp2StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp2Btn.className = "btn btn-sucess";
-      comp2Btn.innerHTML = "Position" + winner;
+      comp2Btn.className = "btn btn-success w-100";
+      comp2Btn.innerHTML = "Position: " + winner;
     }
   }, 500);
 }
@@ -97,8 +97,8 @@ function comp3StartTyping() {
     } else {
       clearInterval(loop);
       winner++;
-      comp3Btn.className = "btn btn-sucess";
-      comp3Btn.innerHTML = "Position" + winner;
+      comp3Btn.className = "btn btn-success w-100";
+      comp3Btn.innerHTML = "Position: " + winner;
     }
   }, 250);
 }
@@ -114,8 +114,8 @@ function playerStartTyping() {
       if (userText == texts[rand]) {
         // console.log('Tačno');
         winner++;
-        playerBtn.className = "btn btn-sucess";
-        playerBtn.innerHTML = "Position" + winner; 
+        playerBtn.className = "btn btn-success w-100";
+        playerBtn.innerHTML = "Position: " + winner; 
       } else {
         // console.log('Nije tačno');
         playerBtn.className = "btn btn-danger";
