@@ -24,6 +24,7 @@ var texts = [
   'Sutra će biti divan dan',
 ];
 var rand;
+var winner = 0;
 
 startBtn.addEventListener('click', timer);
 
@@ -50,7 +51,8 @@ function startTyping() {
   playerArea.focus();
   comp1StartTyping();
   comp2StartTyping();
-  comp3StartTyping();  
+  comp3StartTyping();
+  playerStartTyping();
 }
 
 function comp1StartTyping() {
@@ -62,6 +64,9 @@ function comp1StartTyping() {
       comp1Area.value += textArray.shift();
     } else {
       clearInterval(loop);
+      winner++;
+      comp1Btn.className = 'btn btn-sucess';    
+      comp1Btn.innerHTML = 'Position' + winner;       
     }
   }, 750);
 }
@@ -75,6 +80,9 @@ function comp2StartTyping() {
       comp2Area.value += textArray.shift();
     } else {
       clearInterval(loop);
+      winner++;
+      comp2Btn.className = 'btn btn-sucess';    
+      comp2Btn.innerHTML = 'Position' + winner;        
     }
   }, 500);
 }
@@ -88,6 +96,31 @@ function comp3StartTyping() {
       comp3Area.value += textArray.shift();
     } else {
       clearInterval(loop);
+      winner++;
+      comp3Btn.className = 'btn btn-sucess';    
+      comp3Btn.innerHTML = 'Position' + winner;        
     }
   }, 250);
+}
+
+function playerStartTyping() {
+  playerArea.addEventListener('keyup', function (event) {
+    // console.log(playerArea.value);
+    // console.log(this.value);
+    // console.log(event);
+    if (event.keyCode === 13) {
+      var userText = playerArea.value.trim();
+      console.log(userText);
+      if(userText == texts[rand]) {
+        // console.log('Tačno');
+        winner++;
+        playerBtn.className = 'btn btn-sucess';    
+        playerBtn.innerHTML = 'Position' + winner;         
+      } else {
+        // console.log('Nije tačno'); 
+        playerBtn.className = 'btn btn-danger';    
+        playerBtn.innerHTML = 'Wrong typing';   
+      }
+    }
+  });
 }
