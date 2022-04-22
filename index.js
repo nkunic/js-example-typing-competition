@@ -50,7 +50,7 @@ function startTyping() {
   playerArea.focus();
   comp1StartTyping();
   comp2StartTyping();
-  comp2StartTyping();  
+  comp3StartTyping();  
 }
 
 function comp1StartTyping() {
