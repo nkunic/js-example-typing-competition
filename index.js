@@ -129,7 +129,7 @@ function playerStartTyping() {
         playerBtn.innerHTML = 'Position: ' + winner;
       } else {
         // console.log('Nije tačno');
-        playerBtn.className = 'btn btn-danger';
+        playerBtn.className = 'btn btn-danger w-100';
         playerBtn.innerHTML = 'Wrong typing';
       }
     }
